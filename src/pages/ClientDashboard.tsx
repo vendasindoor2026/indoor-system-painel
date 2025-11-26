@@ -1,4 +1,15 @@
 import { Link } from "react-router-dom";
+import ClientLayout from "../components/ClientLayout";
+
+export default function ClientDashboard() {
+
+  return (
+    <ClientLayout>
+      <h1 className="text-3xl font-bold mb-6">Dashboard do Cliente</h1>
+      <p>Bem-vindo à sua área exclusiva.</p>
+    </ClientLayout>
+  );
+}
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   return (
