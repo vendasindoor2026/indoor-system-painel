@@ -19,7 +19,7 @@ export default function Header() {
         to="/login"
         className="text-white font-semibold hover:underline"
       >
-        Login
+        
       </Link>
     </header>
   );
