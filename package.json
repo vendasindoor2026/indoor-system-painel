@@ -29,9 +29,9 @@
 
    } 
    "scripts": {
-  "build": "vite build --logLevel info", 
+  //"build": "vite build --logLevel info", 
   // ou se você estiver usando um comando intermediário
-  // "build": "npm run clean && npm run compile -- --verbose" 
+  "build": "npm run clean && npm run compile -- --verbose" 
 },
 }
 
