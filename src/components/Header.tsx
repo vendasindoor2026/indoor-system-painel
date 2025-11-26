@@ -22,7 +22,7 @@ export default function Header() {
     <header className="w-full bg-white/10 backdrop-blur-md p-4 flex justify-between items-center border-b border-white/20">
 
       <Link to="/" className="flex items-center gap-2">
-        <img src="/assets/brand/logo.png" className="h-12 drop-shadow-md" />
+        <img src="/assets/brand/logo.png" className="h-60 drop-shadow-md" />
       </Link>
 
       <div className="flex items-center gap-6">
@@ -32,7 +32,7 @@ export default function Header() {
             to="/login"
             className="text-white font-semibold hover:underline"
           >
-            Login
+            
           </Link>
         )}
 
