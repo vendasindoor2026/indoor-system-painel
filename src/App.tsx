@@ -23,10 +23,30 @@ import AdminTotensList from "./pages/AdminTotensList";
 import AdminDashboardAdvanced from "./pages/AdminDashboardAdvanced";
 import AdminClientsList from "./pages/AdminClientsList";
 import AdminClientsNew from "./pages/AdminClientsNew";
+import AdminClientDetails from "./pages/AdminClientDetails";
+import AdminClientEdit from "./pages/AdminClientEdit";
 
 export default function App() {
   return (
     <Routes>
+
+<Route
+  path="/admin/clients/:id/edit"
+  element={
+    <RequireAdmin>
+      <AdminClientEdit />
+    </RequireAdmin>
+  }
+/>
+
+<Route
+  path="/admin/clients/:id"
+  element={
+    <RequireAdmin>
+      <AdminClientDetails />
+    </RequireAdmin>
+  }
+/>
 
 <Route
   path="/admin/clients"
