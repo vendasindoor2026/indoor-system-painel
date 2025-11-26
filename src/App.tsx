@@ -8,10 +8,19 @@ import RequireAuth from "./components/RequireAuth";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import AdminPendingDevices from "./pages/AdminPendingDevices";
+import ClientTotens from "./pages/ClientTotens";
 
 export default function App() {
   return (
     <Routes>
+<Route
+  path="/client/totens"
+  element={
+    <RequireAuth>
+      <ClientTotens />
+    </RequireAuth>
+  }
+/>
 
       <Route
   path="/admin/dispositivos-pendentes"
