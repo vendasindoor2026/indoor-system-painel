@@ -41,6 +41,7 @@ import AdminMediaUpload from "./pages/AdminMediaUpload";
 import AdminAdminsList from "./pages/AdminAdminsList";
 import AdminAdminsNew from "./pages/AdminAdminsNew";
 import AdminAdminsEdit from "./pages/AdminAdminsEdit";
+import RequireAdmin from "./components/RequireAdmin";
 
 
 export default function App() {
