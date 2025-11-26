@@ -25,10 +25,91 @@ import AdminClientsList from "./pages/AdminClientsList";
 import AdminClientsNew from "./pages/AdminClientsNew";
 import AdminClientDetails from "./pages/AdminClientDetails";
 import AdminClientEdit from "./pages/AdminClientEdit";
+import AdminClientTotens from "./pages/AdminClientTotens";
+import AdminClientPlaylists from "./pages/AdminClientPlaylists";
+import AdminClientMedia from "./pages/AdminClientMedia";
+import AdminPlaylistsList from "./pages/AdminPlaylistsList";
+import AdminPlaylistsNew from "./pages/AdminPlaylistsNew";
+import AdminPlaylistDetails from "./pages/AdminPlaylistDetails";
+import AdminPlaylistEdit from "./pages/AdminPlaylistEdit";
+import AdminPlaylistPreview from "./pages/AdminPlaylistPreview";
 
 export default function App() {
   return (
     <Routes>
+
+
+<Route
+  path="/admin/playlists/:id/preview"
+  element={
+    <RequireAdmin>
+      <AdminPlaylistPreview />
+    </RequireAdmin>
+  }
+/>
+
+<Route
+  path="/admin/playlists/:id/edit"
+  element={
+    <RequireAdmin>
+      <AdminPlaylistEdit />
+    </RequireAdmin>
+  }
+/>
+
+<Route
+  path="/admin/playlists/:id"
+  element={
+    <RequireAdmin>
+      <AdminPlaylistDetails />
+    </RequireAdmin>
+  }
+/>
+
+<Route
+  path="/admin/playlists/new"
+  element={
+    <RequireAdmin>
+      <AdminPlaylistsNew />
+    </RequireAdmin>
+  }
+/>
+
+<Route
+  path="/admin/playlists"
+  element={
+    <RequireAdmin>
+      <AdminPlaylistsList />
+    </RequireAdmin>
+  }
+/>
+
+<Route
+  path="/admin/clients/:id/media"
+  element={
+    <RequireAdmin>
+      <AdminClientMedia />
+    </RequireAdmin>
+  }
+/>
+
+<Route
+  path="/admin/clients/:id/playlists"
+  element={
+    <RequireAdmin>
+      <AdminClientPlaylists />
+    </RequireAdmin>
+  }
+/>
+
+<Route
+  path="/admin/clients/:id/totens"
+  element={
+    <RequireAdmin>
+      <AdminClientTotens />
+    </RequireAdmin>
+  }
+/>
 
 <Route
   path="/admin/clients/:id/edit"
