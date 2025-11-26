@@ -36,18 +36,18 @@ export default function Login() {
 
         </div>
 
-        <div className="mt-6 text-white/80 text-sm">
-          <a href="#" className="hover:underline">
-            Esqueci minha senha
-          </a>
-        </div>
+      <div className="mt-6 text-white/80 text-sm">
+  <a href="#" className="hover:underline">
+    Esqueci minha senha
+  </a>
+</div>
 
-        <div className="mt-4 text-white/80 text-sm">
-          Não tem conta?{" "}
-          <a href="/register" className="font-semibold underline">
-            Criar conta
-          </a>
-        </div>
+<div className="mt-4 text-white/80 text-sm">
+  Não tem conta?{" "}
+  <a href="/register" className="font-semibold underline">
+    Criar conta
+  </a>
+</div>
 
       </div>
     </div>
