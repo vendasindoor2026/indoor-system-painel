@@ -1,37 +1,52 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
 
 export default function ResetPassword() {
-  const [password, setPassword] = useState("");
-  const [msg, setMsg] = useState("");
+  const [newPassword, setNewPassword] = useState("");
 
-  async function updatePass(e: any) {
+  useEffect(() => {
+    // Quando o usuário clicar no link do e-mail, o supabase já autentica automaticamente
+    // Nada precisa ser feito aqui
+  }, []);
+
+  async function handleReset(e: any) {
     e.preventDefault();
 
-    const { error } = await supabase.auth.updateUser({ password });
+    const { error } = await supabase.auth.updateUser({
+      password: newPassword
+    });
 
-    if (error) setMsg("Erro: " + error.message);
-    else setMsg("Senha alterada com sucesso! Faça login novamente.");
+    if (error) {
+      alert("Erro ao redefinir senha: " + error.message);
+    } else {
+      alert("Senha redefinida com sucesso!");
+      window.location.href = "/login";
+    }
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-indigo-700 text-white">
-      <form className="bg-white/10 p-6 rounded-lg w-80" onSubmit={updatePass}>
-        <h2 className="text-xl font-bold mb-4">Definir Nova Senha</h2>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-600 via-purple-700 to-blue-900">
+      <form
+        onSubmit={handleReset}
+        className="bg-white/10 p-8 rounded-xl backdrop-blur-md shadow-lg w-full max-w-md"
+      >
+        <h1 className="text-2xl text-white font-bold mb-6">Criar nova senha</h1>
 
         <input
           type="password"
           placeholder="Nova senha"
-          className="w-full p-2 rounded bg-white/20 mb-3"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
+          className="w-full px-4 py-3 rounded-lg mb-4 bg-white/20 border border-white/30 text-white"
+          value={newPassword}
+          onChange={(e) => setNewPassword(e.target.value)}
+          required
         />
 
-        <button className="w-full bg-white text-indigo-700 py-2 rounded font-semibold">
-          Atualizar senha
+        <button
+          className="w-full bg-white text-indigo-700 py-3 rounded-lg font-semibold hover:scale-105 transition"
+          type="submit"
+        >
+          Salvar nova senha
         </button>
-
-        {msg && <p className="mt-3 text-sm">{msg}</p>}
       </form>
     </div>
   );
