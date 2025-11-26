@@ -22,6 +22,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   <Link to="/admin/playlists" className="hover:text-gray-300">Playlists</Link>
   <Link to="/admin/media" className="hover:text-gray-300">Mídias</Link>
   <Link to="/admin/devices" className="hover:text-gray-300">Dispositivos</Link>
+<Link to="/admin/admins" className="hover:text-gray-300">Administradores</Link>
 
   {/* 👇 NOVO MENU AQUI */}
   <Link to="/admin/dispositivos-pendentes" className="hover:text-gray-300">

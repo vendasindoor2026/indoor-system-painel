@@ -37,11 +37,29 @@ import AdminPlaylistAddMedia from "./pages/AdminPlaylistAddMedia";
 import AdminPlaylistOrder from "./pages/AdminPlaylistOrder";
 import AdminMediaList from "./pages/AdminMediaList";
 import AdminMediaDetails from "./pages/AdminMediaDetails";
+import AdminMediaUpload from "./pages/AdminMediaUpload";
+import AdminAdminsList from "./pages/AdminAdminsList";
+import AdminAdminsNew from "./pages/AdminAdminsNew";
+import AdminAdminsEdit from "./pages/AdminAdminsEdit";
+
 
 export default function App() {
   return (
     <Routes>
 
+
+<Route path="/admin/admins" element={<RequireAdmin><AdminAdminsList /></RequireAdmin>} />
+<Route path="/admin/admins/new" element={<RequireAdmin><AdminAdminsNew /></RequireAdmin>} />
+<Route path="/admin/admins/:id/edit" element={<RequireAdmin><AdminAdminsEdit /></RequireAdmin>} />
+
+<Route
+  path="/admin/media/upload"
+  element={
+    <RequireAdmin>
+      <AdminMediaUpload />
+    </RequireAdmin>
+  }
+/>
 
 <Route
   path="/admin/media/:id"
