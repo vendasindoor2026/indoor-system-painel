@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
 import ClientLayout from "../components/ClientLayout";
+// No arquivo src/pages/ClientPendingDevices.tsx
+import ClientLayout from "../components/ClientLayout" 
+// OU
+import ClientLayout from "../components/ClientLayout.tsx"
 
 export default function ClientPendingDevices() {
   const [pendentes, setPendentes] = useState([]);
