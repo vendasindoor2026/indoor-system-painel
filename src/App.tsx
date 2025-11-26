@@ -1,4 +1,3 @@
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Landing from './pages/Landing';
 import Login from './pages/Login';
@@ -7,40 +6,38 @@ import ClientDashboard from './pages/ClientDashboard';
 import Header from './components/Header';
 import RequireAuth from "./components/RequireAuth";
 
-export default () => (
-  <div>
+export default function App() {
+  return (
     <Routes>
-     
-  {/* Página pública */}
-  <Route path="/" element={<Landing />} />
 
-  {/* Login */}
-  <Route path="/login" element={<Login />} />
+      {/* Página pública */}
+      <Route path="/" element={<Landing />} />
 
-  {/* Painel ADMIN */}
-  <Route
-    path="/admin"
-    element={
-      <RequireAuth role="admin">
-        <Header />
-        <AdminDashboard />
-      </RequireAuth>
-    }
-  />
+      {/* Login */}
+      <Route path="/login" element={<Login />} />
 
-  {/* Painel CLIENTE */}
-  <Route
-    path="/client"
-    element={
-      <RequireAuth role="client">
-        <Header />
-        <ClientDashboard />
-      </RequireAuth>
-    }
-  />
+      {/* Painel ADMIN */}
+      <Route
+        path="/admin"
+        element={
+          <RequireAuth role="admin">
+            <Header />
+            <AdminDashboard />
+          </RequireAuth>
+        }
+      />
 
-</Routes>
+      {/* Painel CLIENTE */}
+      <Route
+        path="/client"
+        element={
+          <RequireAuth role="client">
+            <Header />
+            <ClientDashboard />
+          </RequireAuth>
+        }
+      />
 
     </Routes>
-  </div>
-);
+  );
+}
