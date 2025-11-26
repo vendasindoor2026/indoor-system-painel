@@ -87,7 +87,7 @@ export default function ClientPlaylistEditor() {
   }
 
   // ----- REMOVER ITEM -----
-  async function removeItem(itemId) {
+  async function removeItem(itemId: string) {
     if (!confirm("Remover item da playlist?")) return;
 
     await supabase.from("playlist_items").delete().eq("id", itemId);
@@ -102,7 +102,6 @@ export default function ClientPlaylistEditor() {
 
       {loading && <p className="text-gray-600">Carregando…</p>}
 
-      {/* LISTA DE ITENS */}
       {!loading && (
         <>
           <h2 className="text-xl font-semibold mb-2">Itens da Playlist</h2>
@@ -141,5 +140,58 @@ export default function ClientPlaylistEditor() {
           >
             + Adicionar Mídia
           </button>
+
+          {/* MODAL ADICIONAR ITEM */}
+          {adding && (
+            <div className="mt-6 p-4 border bg-white rounded shadow">
+              <h3 className="text-lg font-semibold mb-3">Adicionar Mídia</h3>
+
+              <label className="block mb-2">
+                Selecione a mídia:
+                <select
+                  className="w-full border px-2 py-2 rounded mt-1"
+                  value={selectedAsset}
+                  onChange={(e) => setSelectedAsset(e.target.value)}
+                >
+                  <option value="">Selecione</option>
+                  {media.map((m) => (
+                    <option key={m.id} value={m.id}>
+                      {m.filename}
+                    </option>
+                  ))}
+                </select>
+              </label>
+
+              <label className="block mb-2">
+                Duração (segundos):
+                <input
+                  type="number"
+                  className="w-full border px-2 py-2 rounded mt-1"
+                  value={duration}
+                  onChange={(e) => setDuration(Number(e.target.value))}
+                  min={1}
+                />
+              </label>
+
+              <div className="flex gap-3 mt-4">
+                <button
+                  className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+                  onClick={addItem}
+                >
+                  Adicionar
+                </button>
+
+                <button
+                  className="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700"
+                  onClick={() => setAdding(false)}
+                >
+                  Cancelar
+                </button>
+              </div>
+            </div>
+          )}
         </>
       )}
+    </ClientLayout>
+  );
+}
