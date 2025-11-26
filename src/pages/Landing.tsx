@@ -1,59 +1,58 @@
+import * as React from "react";
+
 export default function Landing() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-100 flex flex-col items-center justify-center text-center px-6">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-700 to-blue-900 text-white flex flex-col items-center px-6">
 
-      {/* Nome + logo */}
-      <div className="flex flex-col items-center gap-4">
+      {/* Hero */}
+      <div className="flex flex-col items-center text-center mt-20 animate-[fadeIn_1s_ease]">
         <img
           src="/assets/brand/logo.png"
           alt="Logo"
-          className="h-28 w-auto drop-shadow"
+          className="h-28 w-auto mb-6 drop-shadow-xl animate-[pop_0.8s_ease]"
         />
 
-        <h1 className="text-4xl md:text-6xl font-extrabold text-gray-800">
+        <h1 className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-lg">
           GRUPO INDOOR SMART
         </h1>
+
+        <p className="mt-6 text-lg md:text-2xl max-w-2xl text-indigo-200 leading-relaxed">
+          A plataforma mais completa para gerenciamento de Totens Indoor,
+          Android TV, Smart TVs Samsung, LG WebOS, Roku e muito mais.
+        </p>
+
+        <div className="flex gap-4 mt-10">
+          <a
+            href="/login"
+            className="px-8 py-3 bg-white text-indigo-700 font-semibold rounded-lg text-lg shadow-xl hover:scale-105 transition"
+          >
+            Entrar
+          </a>
+
+          <a
+            href="#sobre"
+            className="px-8 py-3 border border-white/50 rounded-lg text-lg hover:bg-white/10 transition"
+          >
+            Saiba Mais
+          </a>
+        </div>
       </div>
 
-      {/* Subtítulo */}
-      <p className="mt-6 text-lg md:text-2xl text-gray-600 max-w-2xl">
-        Soluções completas para Totens Indoor, Android TV, Smart TV Samsung,
-        LG WebOS, Roku e muito mais. Gerencie playlists, mídias e clientes
-        com facilidade e desempenho.
-      </p>
-
-      {/* Botões */}
-      <div className="flex items-center gap-4 mt-10">
-        <a
-          href="/login"
-          className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-lg shadow transition"
-        >
-          Entrar na Plataforma
-        </a>
-
-        <a
-          href="#sobre"
-          className="px-8 py-3 border border-gray-400 rounded-lg text-lg hover:bg-gray-200 transition"
-        >
-          Sobre nós
-        </a>
-      </div>
-
-      {/* Sessão Sobre */}
-      <div id="sobre" className="mt-20 max-w-3xl">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">
+      {/* Sobre */}
+      <div id="sobre" className="mt-32 max-w-3xl text-center animate-[fadeIn_1.5s_ease]">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 drop-shadow">
           O que é o Indoor Smart?
         </h2>
-        <p className="text-gray-600 text-lg leading-relaxed">
-          Somos uma plataforma profissional criada para empresas que desejam
-          exibir propagandas, anúncios e conteúdos dinâmicos em totens e TVs.
-          Oferecemos um painel simples, moderno e poderoso para publicar
-          conteúdos em segundos nos seus dispositivos.
+
+        <p className="text-indigo-200 text-lg leading-relaxed">
+          Somos uma plataforma profissional criada para empresas que desejam exibir
+          propagandas dinâmicas, anúncios e conteúdos visuais em totens e TVs.
+          Com nosso painel moderno, você gerencia mídias, playlists, clientes
+          e dispositivos com a maior facilidade.
         </p>
       </div>
 
-      {/* Rodapé */}
-      <footer className="mt-20 text-gray-500 text-sm">
+      <footer className="mt-24 mb-10 text-indigo-300 text-sm">
         © {new Date().getFullYear()} Grupo Indoor Smart — Todos os direitos reservados.
       </footer>
     </div>
