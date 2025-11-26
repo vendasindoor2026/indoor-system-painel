@@ -10,10 +10,40 @@ import ResetPassword from "./pages/ResetPassword";
 import AdminPendingDevices from "./pages/AdminPendingDevices";
 import ClientTotens from "./pages/ClientTotens";
 import ClientPendingDevices from "./pages/ClientPendingDevices";
+import ClientPlaylistEditor from "./pages/ClientPlaylistEditor";
+import ClientMedia from "./pages/ClientMedia";
+import ClientConfig from "./pages/ClientConfig";
 
 export default function App() {
   return (
     <Routes>
+
+<Route
+  path="/client/config"
+  element={
+    <RequireAuth>
+      <ClientConfig />
+    </RequireAuth>
+  }
+/>
+
+<Route
+  path="/client/media"
+  element={
+    <RequireAuth>
+      <ClientMedia />
+    </RequireAuth>
+  }
+/>
+
+<Route
+  path="/client/playlists/:id"
+  element={
+    <RequireAuth>
+      <ClientPlaylistEditor />
+    </RequireAuth>
+  }
+/>
 
       <Route
   path="/client/pendentes"
