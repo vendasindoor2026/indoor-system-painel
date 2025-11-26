@@ -5,11 +5,17 @@ import AdminDashboard from './pages/AdminDashboard';
 import ClientDashboard from './pages/ClientDashboard';
 import Header from './components/Header';
 import RequireAuth from "./components/RequireAuth";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
+
 
 export default function App() {
   return (
     <Routes>
 
+      
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+<Route path="/reset-password" element={<ResetPassword />} />
       {/* Página pública */}
       <Route path="/" element={<Landing />} />
 
