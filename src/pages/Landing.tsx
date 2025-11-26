@@ -9,11 +9,11 @@ export default function Landing() {
         <img
           src="/assets/brand/logo.png"
           alt="Logo"
-          className="h-20 w-auto mb-6 drop-shadow-xl animate-[pop_0.8s_ease]"
+          className="h-58 w-auto mb-6 drop-shadow-xl animate-[pop_0.8s_ease]"
         />
 
         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-lg">
-          GRUPO INDOOR SMART
+          Venha Conosco Nesta Jornada Tecnológica.
         </h1>
 
         <p className="mt-6 text-lg md:text-2xl max-w-2xl text-indigo-200 leading-relaxed">
