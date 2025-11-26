@@ -9,7 +9,7 @@ export default function Landing() {
         <img
           src="/assets/brand/logo.png"
           alt="Logo"
-          className="h-60 w-auto mb-6 drop-shadow-xl animate-[pop_0.8s_ease]"
+          className="h-80 w-auto mb-6 drop-shadow-xl animate-[pop_0.8s_ease]"
         />
 
         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-lg">
