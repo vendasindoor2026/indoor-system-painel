@@ -11,7 +11,7 @@ export default function Login() {
         </h1>
 
         <div className="flex flex-col gap-4 text-left">
-          
+
           <div>
             <label className="text-white text-sm ml-1">E-mail</label>
             <input
@@ -38,3 +38,18 @@ export default function Login() {
 
         <div className="mt-6 text-white/80 text-sm">
           <a href="#" className="hover:underline">
+            Esqueci minha senha
+          </a>
+        </div>
+
+        <div className="mt-4 text-white/80 text-sm">
+          Não tem conta?{" "}
+          <a href="/register" className="font-semibold underline">
+            Criar conta
+          </a>
+        </div>
+
+      </div>
+    </div>
+  );
+}
