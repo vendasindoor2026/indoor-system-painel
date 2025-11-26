@@ -9,10 +9,21 @@ import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import AdminPendingDevices from "./pages/AdminPendingDevices";
 import ClientTotens from "./pages/ClientTotens";
+import ClientPendingDevices from "./pages/ClientPendingDevices";
 
 export default function App() {
   return (
     <Routes>
+
+      <Route
+  path="/client/pendentes"
+  element={
+    <RequireAuth>
+      <ClientPendingDevices />
+    </RequireAuth>
+  }
+/>
+
 <Route
   path="/client/totens"
   element={
