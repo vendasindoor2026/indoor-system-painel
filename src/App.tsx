@@ -5,19 +5,43 @@ import Login from './pages/Login';
 import AdminDashboard from './pages/AdminDashboard';
 import ClientDashboard from './pages/ClientDashboard';
 import Header from './components/Header';
+import RequireAuth from "./components/RequireAuth";
 
 export default () => (
   <div>
     <Routes>
-     <Route path='/admin' element={<AdminDashboard />} />
+     <Routes>
 
-      {/* Página inicial sem Header */}
-      <Route path='/' element={<Landing />} />
+  {/* Página pública */}
+  <Route path="/" element={<Landing />} />
 
-      {/* Páginas internas com Header */}
-      <Route path='/login' element={<><Header /><Login /></>} />
-      <Route path='/admin' element={<><Header /><AdminDashboard /></>} />
-      <Route path='/client' element={<><Header /><ClientDashboard /></>} />
+  {/* Login */}
+  <Route path="/login" element={<Login />} />
+
+  {/* Painel ADMIN */}
+  <Route
+    path="/admin"
+    element={
+      <RequireAuth role="admin">
+        <Header />
+        <AdminDashboard />
+      </RequireAuth>
+    }
+  />
+
+  {/* Painel CLIENTE */}
+  <Route
+    path="/client"
+    element={
+      <RequireAuth role="client">
+        <Header />
+        <ClientDashboard />
+      </RequireAuth>
+    }
+  />
+
+</Routes>
+
     </Routes>
   </div>
 );
