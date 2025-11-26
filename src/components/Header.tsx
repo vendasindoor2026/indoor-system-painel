@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
-    <header className="p-4 shadow flex items-center justify-between bg-white/10 backdrop-blur-md">
-      
+    <header className="p-4 flex items-center justify-between">
+
       {/* Logo pequena */}
       <Link to="/">
         <img
           src="/assets/brand/logo.png"
           alt="Logo"
-          className="h-12 w-auto"  // <<< Agora fica pequeno sempre
+          className="h-12 w-auto"
         />
       </Link>
 
