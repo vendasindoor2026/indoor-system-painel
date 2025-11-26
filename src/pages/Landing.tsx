@@ -4,12 +4,11 @@ export default function Landing() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-700 to-blue-900 text-white flex flex-col items-center px-6">
 
-      {/* Hero */}
-      <div className="flex flex-col items-center text-center mt-20 animate-[fadeIn_1s_ease]">
+      <div className="flex flex-col items-center text-center mt-20">
         <img
           src="/assets/brand/logo.png"
           alt="Logo"
-          className="h-80 w-auto mb-6 drop-shadow-xl animate-[pop_0.8s_ease]"
+          className="h-80 w-auto mb-6 drop-shadow-xl"
         />
 
         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-lg">
@@ -38,8 +37,7 @@ export default function Landing() {
         </div>
       </div>
 
-      {/* Sobre */}
-      <div id="sobre" className="mt-32 max-w-3xl text-center animate-[fadeIn_1.5s_ease]">
+      <div id="sobre" className="mt-32 max-w-3xl text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 drop-shadow">
           O que é o Indoor Smart?
         </h2>
@@ -53,7 +51,8 @@ export default function Landing() {
       </div>
 
       <footer className="mt-24 mb-10 text-indigo-300 text-sm">
-        © {new Date().getFullYear()} Grupo Indoor Smart — Todos os direitos reservados. By Ordonio Andrade da Silva
+        © {new Date().getFullYear()} Grupo Indoor Smart — Todos os direitos reservados.  
+        By Ordonio Andrade da Silva
       </footer>
     </div>
   );
