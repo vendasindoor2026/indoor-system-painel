@@ -53,7 +53,7 @@ export default function Landing() {
       </div>
 
       <footer className="mt-24 mb-10 text-indigo-300 text-sm">
-        © {new Date().getFullYear()} Grupo Indoor Smart — Todos os direitos reservados.
+        © {new Date().getFullYear()} Grupo Indoor Smart — Todos os direitos reservados. By Ordonio Andrade da Silva
       </footer>
     </div>
   );
