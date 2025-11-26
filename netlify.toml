@@ -1,1 +1,15 @@
-netlify/functions
+[build]
+  # Onde o Vite coloca os arquivos de produção
+  publish = "dist" 
+  
+  # O comando para construir o projeto (o mesmo que você usa localmente)
+  command = "npm run build" 
+
+# Configuração de contexto de produção (opcional, mas bom para garantir)
+[context.production]
+  # Se você não tem Netlify Functions, remova qualquer menção de 'functions'
+  # Se você tinha 'functions = "netlify.toml"' antes, isso deve ser removido.
+  # Se precisar de functions, use [functions] no lugar de [context.production].
+  
+  # Define a versão do Node.js, se você usa .nvmrc no repo, pode ser opcional.
+  # NODE_VERSION = "20.19.0"
