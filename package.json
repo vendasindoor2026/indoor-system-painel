@@ -1,5 +1,5 @@
 {
-  "type": "build",
+  "type": "module",
   "name": "painel",
   "version": "0.1.0",
   "private": true,
