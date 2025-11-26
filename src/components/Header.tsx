@@ -22,7 +22,7 @@ export default function Header() {
     <header className="w-full p-4 flex justify-between items-center bg-transparent">
 
       <Link to="/" className="flex items-center gap-2">
-        <img src="/assets/brand/logo.png" className="h-20 drop-shadow-md" />
+        <img src="/assets/brand/logo.png" className="h-60 drop-shadow-md" />
       </Link>
 
       <div className="flex items-center gap-6">
