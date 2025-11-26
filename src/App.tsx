@@ -33,11 +33,51 @@ import AdminPlaylistsNew from "./pages/AdminPlaylistsNew";
 import AdminPlaylistDetails from "./pages/AdminPlaylistDetails";
 import AdminPlaylistEdit from "./pages/AdminPlaylistEdit";
 import AdminPlaylistPreview from "./pages/AdminPlaylistPreview";
+import AdminPlaylistAddMedia from "./pages/AdminPlaylistAddMedia";
+import AdminPlaylistOrder from "./pages/AdminPlaylistOrder";
+import AdminMediaList from "./pages/AdminMediaList";
+import AdminMediaDetails from "./pages/AdminMediaDetails";
 
 export default function App() {
   return (
     <Routes>
 
+
+<Route
+  path="/admin/media/:id"
+  element={
+    <RequireAdmin>
+      <AdminMediaDetails />
+    </RequireAdmin>
+  }
+/>
+
+<Route
+  path="/admin/media"
+  element={
+    <RequireAdmin>
+      <AdminMediaList />
+    </RequireAdmin>
+  }
+/>
+
+<Route
+  path="/admin/playlists/:id/order"
+  element={
+    <RequireAdmin>
+      <AdminPlaylistOrder />
+    </RequireAdmin>
+  }
+/>
+
+<Route
+  path="/admin/playlists/:id/add-media"
+  element={
+    <RequireAdmin>
+      <AdminPlaylistAddMedia />
+    </RequireAdmin>
+  }
+/>
 
 <Route
   path="/admin/playlists/:id/preview"
