@@ -1,41 +1,66 @@
-import React from "react";
+import * as React from "react";
+import { useState } from "react";
 
 export default function Login() {
+  const [loading, setLoading] = useState(false);
+
+  const handleLogin = (e: any) => {
+    e.preventDefault();
+    setLoading(true);
+
+    setTimeout(() => {
+      setLoading(false);
+      alert("Sistema pronto para conectar ao Supabase 🔐");
+    }, 2000);
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-600 via-purple-700 to-blue-900 px-4">
 
-      <div className="bg-white/10 backdrop-blur-lg shadow-2xl rounded-2xl p-8 w-full max-w-md text-center">
+      <div className="bg-white/10 backdrop-blur-xl shadow-2xl rounded-2xl p-10 w-full max-w-md text-center border border-white/20">
 
-        <h1 className="text-3xl font-bold text-white mb-6">
-          Acesse sua Conta
+        {/* Título */}
+        <h1 className="text-3xl font-bold text-white mb-6 drop-shadow-lg">
+          Bem-vindo ao Sistema
         </h1>
 
-        <div className="flex flex-col gap-4 text-left">
+        {/* Formulário */}
+        <form onSubmit={handleLogin} className="flex flex-col gap-5 text-left">
 
+          {/* Email */}
           <div>
             <label className="text-white text-sm ml-1">E-mail</label>
             <input
               type="email"
-              placeholder="Seu e-mail"
-              className="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder-white/70 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white"
+              placeholder="Digite seu e-mail"
+              className="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder-white/60 border border-white/30 focus:outline-none focus:ring-2 focus:ring-indigo-200 shadow"
+              required
             />
           </div>
 
+          {/* Senha */}
           <div>
             <label className="text-white text-sm ml-1">Senha</label>
             <input
               type="password"
-              placeholder="Sua senha"
-              className="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder-white/70 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white"
+              placeholder="Digite sua senha"
+              className="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder-white/60 border border-white/30 focus:outline-none focus:ring-2 focus:ring-indigo-200 shadow"
+              required
             />
           </div>
 
-          <button className="mt-4 w-full bg-white text-indigo-700 font-semibold py-3 rounded-lg">
-            Entrar
+          {/* Botão Entrar */}
+          <button
+            type="submit"
+            className="mt-2 w-full bg-white text-indigo-700 font-semibold py-3 rounded-lg hover:scale-[1.03] transition shadow-lg disabled:opacity-40"
+            disabled={loading}
+          >
+            {loading ? "Entrando..." : "Entrar"}
           </button>
 
-        </div>
+        </form>
 
+        {/* Links */}
         <div className="mt-6 text-white/80 text-sm">
           <a href="#" className="hover:underline">
             Esqueci minha senha
