@@ -1,18 +1,33 @@
 import * as React from "react";
 import { useState } from "react";
+import { supabase } from "../lib/supabase";
 
 export default function Login() {
   const [loading, setLoading] = useState(false);
 
-  const handleLogin = (e: any) => {
-    e.preventDefault();
-    setLoading(true);
+  const handleLogin = async (e: any) => {
+  e.preventDefault();
+  setLoading(true);
 
-    setTimeout(() => {
-      setLoading(false);
-      alert("Sistema pronto para conectar ao Supabase 🔐");
-    }, 2000);
-  };
+  const email = e.target[0].value;
+  const password = e.target[1].value;
+
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password
+  });
+
+  setLoading(false);
+
+  if (error) {
+    alert("❌ Erro ao entrar: " + error.message);
+    return;
+  }
+
+  alert("✔ Login realizado com sucesso!");
+  window.location.href = "/admin"; 
+};
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-600 via-purple-700 to-blue-900 px-4">
