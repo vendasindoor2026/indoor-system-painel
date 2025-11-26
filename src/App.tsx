@@ -5,7 +5,7 @@ import Login from './pages/Login';
 import AdminDashboard from './pages/AdminDashboard';
 import ClientDashboard from './pages/ClientDashboard';
 import Header from './components/Header';
-import RequireAuth from "./components/RequireAuth";
+//import RequireAuth from "./components/RequireAuth";
 
 export default () => (
   <div>
