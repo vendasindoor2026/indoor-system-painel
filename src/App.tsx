@@ -66,6 +66,14 @@ export default function App() {
       {/* =======================
           ROTAS ADMINISTRADOR
       ======================== */}
+        <Route
+  path="/admin/dashboard-advanced"
+  element={
+    <RequireAdmin>
+      <AdminDashboardAdvanced />
+    </RequireAdmin>
+  }
+/>
 
       {/* Admin: Administradores */}
       <Route path="/admin/admins" element={<RequireAdmin><AdminAdminsList /></RequireAdmin>} />
