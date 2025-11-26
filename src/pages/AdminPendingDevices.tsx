@@ -78,8 +78,43 @@ export default function AdminPendingDevices() {
                   <th className="p-3 font-semibold">Ações</th>
                 </tr>
               </thead>
+
               <tbody>
                 {pending.map((d) => (
                   <tr key={d.id} className="border-b">
                     <td className="p-3">{d.device_id}</td>
-                    <td className="p-3">{d.model || "—"}
+
+                    <td className="p-3">{d.model || "—"}</td>
+
+                    <td className="p-3">{d.client_request || "Não atribuído"}</td>
+
+                    <td className="p-3">
+                      {new Date(d.created_at).toLocaleString()}
+                    </td>
+
+                    <td className="p-3 flex gap-2">
+                      <button
+                        onClick={() => authorizeDevice(d)}
+                        className="px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700"
+                      >
+                        Autorizar
+                      </button>
+
+                      <button
+                        onClick={() => deletePending(d)}
+                        className="px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700"
+                      >
+                        Excluir
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+
+            </table>
+          </div>
+        )}
+      </div>
+    </AdminLayout>
+  );
+}
