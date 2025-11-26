@@ -13,10 +13,20 @@ import ClientPendingDevices from "./pages/ClientPendingDevices";
 import ClientPlaylistEditor from "./pages/ClientPlaylistEditor";
 import ClientMedia from "./pages/ClientMedia";
 import ClientConfig from "./pages/ClientConfig";
+import ClientTotenDetails from "./pages/ClientTotenDetails";
 
 export default function App() {
   return (
     <Routes>
+
+<Route
+  path="/client/totens/:id"
+  element={
+    <RequireAuth>
+      <ClientTotenDetails />
+    </RequireAuth>
+  }
+/>
 
 <Route
   path="/client/config"
