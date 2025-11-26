@@ -26,5 +26,12 @@
   },
   "engines": {
     "node": "20.x"
-  }
+
+   } 
+   "scripts": {
+  "build": "vite build --logLevel info", 
+  // ou se você estiver usando um comando intermediário
+  // "build": "npm run clean && npm run compile -- --verbose" 
+},
 }
+
