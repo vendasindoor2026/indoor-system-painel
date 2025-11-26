@@ -99,7 +99,7 @@ export default function Login() {
         </form>
 
         <div className="mt-6 text-white/80 text-sm">
-          <a href="#" className="hover:underline">
+          <a href="/forgot-password" className="hover:underline">
             Esqueci minha senha
           </a>
         </div>
