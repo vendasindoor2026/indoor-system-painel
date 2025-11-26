@@ -9,6 +9,8 @@ import Header from './components/Header';
 export default () => (
   <div>
     <Routes>
+     <Route path='/admin' element={<AdminDashboard />} />
+
       {/* Página inicial sem Header */}
       <Route path='/' element={<Landing />} />
 
