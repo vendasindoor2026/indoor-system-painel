@@ -10,3 +10,11 @@ export default defineConfig({
     host: true,
   },
 });
+"devDependencies": {
+  "@vitejs/plugin-react-swc": "^4.2.2",
+  "vite": "^5.0.10",
+  "typescript": "^5.3.3",
+  "tailwindcss": "^3.4.1",
+  "postcss": "^8.4.35",
+  "autoprefixer": "^10.4.18"
+}
