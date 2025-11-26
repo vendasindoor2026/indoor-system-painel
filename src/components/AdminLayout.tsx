@@ -16,6 +16,18 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <Link to="/admin/media" className="hover:text-gray-300">Mídias</Link>
           <Link to="/admin/devices" className="hover:text-gray-300">Dispositivos</Link>
         </nav>
+<nav className="flex flex-col gap-4 text-lg">
+  <Link to="/admin" className="hover:text-gray-300">Dashboard</Link>
+  <Link to="/admin/clients" className="hover:text-gray-300">Clientes</Link>
+  <Link to="/admin/playlists" className="hover:text-gray-300">Playlists</Link>
+  <Link to="/admin/media" className="hover:text-gray-300">Mídias</Link>
+  <Link to="/admin/devices" className="hover:text-gray-300">Dispositivos</Link>
+
+  {/* 👇 NOVO MENU AQUI */}
+  <Link to="/admin/dispositivos-pendentes" className="hover:text-gray-300">
+    Dispositivos Pendentes
+  </Link>
+</nav>
 
         <div className="mt-auto">
           <button

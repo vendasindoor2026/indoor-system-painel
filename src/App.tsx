@@ -7,13 +7,20 @@ import Header from './components/Header';
 import RequireAuth from "./components/RequireAuth";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
-
+import AdminPendingDevices from "./pages/AdminPendingDevices";
 
 export default function App() {
   return (
     <Routes>
 
-      
+      <Route
+  path="/admin/dispositivos-pendentes"
+  element={
+    <RequireAuth>
+      <AdminPendingDevices />
+    </RequireAuth>
+  }
+/>
       <Route path="/forgot-password" element={<ForgotPassword />} />
 <Route path="/reset-password" element={<ResetPassword />} />
       {/* Página pública */}
